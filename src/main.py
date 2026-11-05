@@ -48,4 +48,4 @@ class Reader:
 
 
 if __name__ == "__main__":
-    raeder = Reader("")
+    raeder = Reader()
