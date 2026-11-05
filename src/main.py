@@ -8,7 +8,6 @@ class Reader:
     def __init__(self, separator: str = ",", encoding: str = "UTF-8"):
         self.data = []
         self.title = []
-        self.index = -1
 
         self.separator = separator
         self.encoding = encoding
@@ -36,15 +35,7 @@ class Reader:
         return self.data[index]
 
     def __iter__(self):
-        return self
-
-    def __next__(self):
-        self.index += 1
-
-        if self.index >= self.__len__():
-            raise StopIteration
-
-        return self.data[self.index]
+        return iter(self.data)
 
 
 if __name__ == "__main__":
